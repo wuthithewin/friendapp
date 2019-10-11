@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <div class="container">
+    <h1>this is survey</h1>
+    <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-default">Name</span>
+        </div>
+        <input id="name" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+      </div>
+
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="inputGroup-sizing-default">Photo</span>
+        </div>
+        <input id="photo" type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+      </div>
+
+      <!-- <p> Spicy food is fun? </p> -->
+      <!-- <select id="q1" class="custom-select">
+        <option selected>Open this select answer</option>
+        <option value="1">One (Not Agree)</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+        <option value="4">Four</option>
+        <option value="5">Five (Strongly Agree) </option>
+    </select>
+
+    <p> Hitting the gym often ?</p>
+      <select id="q2" class="custom-select">
+        <option selected>Open this select answer</option>
+        <option value="1">One (Not Agree)</option>
+        <option value="2">Two</option>
+        <option value="3">Three</option>
+        <option value="4">Four</option>
+        <option value="5">Five (Strongly Agree) </option>
+    </select>
+   
+    <p> Coffee is the best drink in the morning? </p>
+    <select id="q3" class="custom-select">
+      <option selected>Open this select answer</option>
+      <option value="1">One (Not Agree)</option>
+      <option value="2">Two</option>
+      <option value="3">Three</option>
+      <option value="4">Four</option>
+      <option value="5">Five (Strongly Agree) </option>
+  </select>    
+
+  <p> Q4 </p>
+    <select id="q4" class="custom-select">
+      <option selected>Open this select answer</option>
+      <option value="1">One (Not Agree)</option>
+      <option value="2">Two</option>
+      <option value="3">Three</option>
+      <option value="4">Four</option>
+      <option value="5">Five (Strongly Agree) </option>
+  </select>    
+
+  <p> Q5 </p>
+    <select id="q5" class="custom-select">
+      <option selected>Open this select answer</option>
+      <option value="1">One (Not Agree)</option>
+      <option value="2">Two</option>
+      <option value="3">Three</option>
+      <option value="4">Four</option>
+      <option value="5">Five (Strongly Agree) </option>
+  </select>    
+  
+  <p> Q6 </p>
+    <select id="q6" class="custom-select">
+      <option selected>Open this select answer</option>
+      <option value="1">One (Not Agree)</option>
+      <option value="2">Two</option>
+      <option value="3">Three</option>
+      <option value="4">Four</option>
+      <option value="5">Five (Strongly Agree) </option>
+  </select>    
+  
+  <p> Q7 </p>
+    <select id="q7" class="custom-select">
+      <option selected>Open this select answer</option>
+      <option value="1">One (Not Agree)</option>
+      <option value="2">Two</option>
+      <option value="3">Three</option>
+      <option value="4">Four</option>
+      <option value="5">Five (Strongly Agree) </option>
+  </select>    
+  
+  <p> Q8 </p>
+    <select id="q8" class="custom-select">
+      <option selected>Open this select answer</option>
+      <option value="1">One (Not Agree)</option>
+      <option value="2">Two</option>
+      <option value="3">Three</option>
+      <option value="4">Four</option>
+      <option value="5">Five (Strongly Agree) </option>
+  </select>    
+  
+  <p> Q9 </p>
+    <select id="q9" class="custom-select">
+      <option selected>Open this select answer</option>
+      <option value="1">One (Not Agree)</option>
+      <option value="2">Two</option>
+      <option value="3">Three</option>
+      <option value="4">Four</option>
+      <option value="5">Five (Strongly Agree) </option>
+  </select>    
+  
+  <p> Q10 </p>
+    <select id="q10" class="custom-select">
+      <option selected>Open this select answer</option>
+      <option value="1">One (Not Agree)</option>
+      <option value="2">Two</option>
+      <option value="3">Three</option>
+      <option value="4">Four</option>
+      <option value="5">Five (Strongly Agree) </option>
+  </select>     -->
+  
+  <div id="questions" ></div>
+    <button id ="submit">Submit</button>
+      
+    </div>
+    <script>
+      $.get("/questions")
+      .then(function(data){
+        console.log(data);
+        
+        for (i = 0; i < data.length; i++) {
+        var question = data[i];
+        $('#questions').append(`<p> ${question.questions} </p>
+    <select id="q${question.id}" class="custom-select">
+      <option selected>Open this select answer</option>
+      <option value="1">One (Not Agree)</option>
+      <option value="2">Two</option>
+      <option value="3">Three</option>
+      <option value="4">Four</option>
+      <option value="5">Five (Strongly Agree) </option>
+  </select>    `)
+      }
+      })
+
+        $('#submit').on('click', function(){
+
+            var newFriends = {
+                name: $('#name').val(),
+                photo: $('#photo').val(),
+                scores: [$('#q1').val(), $('#q2').val(), $('#q3').val(), $('#q4').val(), $('#q5').val(),
+                $('#q6').val(),$('#q7').val(),$('#q8').val(),$('#q9').val(),$('#q10').val()]
+                
+            };           
+             console.log(newFriends);
+             $.post("api/friends", newFriends) 
+             .then(function(data){
+                 console.log(data);
+             })
+        })
+ 
+            
+
+
+    </script>
+</body>
+</html>
